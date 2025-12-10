@@ -1,0 +1,26 @@
+@page
+@model TorontoPearson.Pages.IndexModel
+@{
+    ViewData["Title"] = "Toronto Pearson Flights";
+}
+
+<section class="page">
+    <header class="page__header">
+        <div>
+            <p class="eyebrow">Toronto Pearson Airport</p>
+            <h1>Flight dashboard</h1>
+            <p class="lede">A minimal ASP.NET Core app that surfaces live arrivals and departures for YYZ.</p>
+        </div>
+    </header>
+
+    <div class="card-grid">
+        <a class="card" asp-page="/Arrivals">
+            <h2>Arrivals</h2>
+            <p>See incoming flights, gates, and times with Porter Airlines featured first.</p>
+        </a>
+        <a class="card" asp-page="/Departures">
+            <h2>Departures</h2>
+            <p>Review outgoing flights using the same airport API with the airline filter.</p>
+        </a>
+    </div>
+</section>

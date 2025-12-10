@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Toronto Pearson Flights</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TorontoPearson.styles.css" asp-append-version="true" />
+</head>
+<body>
+<header class="site-header">
+    <div class="site-header__brand">
+        <a asp-page="/Index">Toronto Pearson</a>
+    </div>
+    <nav class="site-header__nav">
+        <a asp-page="/Arrivals">Arrivals</a>
+        <a asp-page="/Departures">Departures</a>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+<footer class="site-footer">
+    <p>Built with ASP.NET Core · Sample use of the Toronto Pearson flight feed.</p>
+</footer>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
