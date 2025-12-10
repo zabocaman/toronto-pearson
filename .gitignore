@@ -1,0 +1,14 @@
+bin/
+obj/
+**/bin/
+**/obj/
+.vs/
+wwwroot/lib/
+**/wwwroot/lib/
+*.user
+*.swp
+
+# Build artifacts
+*.dll
+*.pdb
+*.db

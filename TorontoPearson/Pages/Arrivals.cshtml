@@ -1,0 +1,50 @@
+@page
+@model TorontoPearson.Pages.ArrivalsModel
+@{
+    ViewData["Title"] = "Arrivals";
+}
+
+<section class="page">
+    <header class="page__header">
+        <div>
+            <p class="eyebrow">Toronto Pearson Airport</p>
+            <h1>Arrivals</h1>
+            <p class="lede">Live arrivals pulled straight from the airport feed. Porter Airlines is featured by default.</p>
+        </div>
+        <form method="get" class="filter">
+            <label for="airline">Filter by airline</label>
+            <select id="airline" name="airline" onchange="this.form.submit()">
+                <option value="all" selected="@(string.IsNullOrWhiteSpace(Model.Airline) || Model.Airline.Equals("all", StringComparison.OrdinalIgnoreCase) ? "selected" : null)">All airlines</option>
+                @foreach (var airline in Model.Airlines)
+                {
+                    <option value="@airline" selected="@(airline.Equals(Model.Airline ?? string.Empty, StringComparison.OrdinalIgnoreCase) ? "selected" : null)">@airline</option>
+                }
+            </select>
+            <noscript>
+                <button type="submit">Apply</button>
+            </noscript>
+        </form>
+    </header>
+
+    <div class="table">
+        <div class="table__row table__row--head">
+            <div>Airline</div>
+            <div>Flight</div>
+            <div>City</div>
+            <div>Gate</div>
+            <div>Time</div>
+            <div>Status</div>
+        </div>
+        @foreach (var flight in Model.Flights)
+        {
+            <div class="table__row @(flight.Airline.Equals("Porter Airlines", StringComparison.OrdinalIgnoreCase) ? "table__row--featured" : string.Empty)">
+                <div class="airline">@flight.Airline</div>
+                <div>@flight.FlightNumber</div>
+                <div>@flight.City</div>
+                <div>@flight.Gate</div>
+                <div>@(flight.ScheduledTime?.ToLocalTime().ToString("HH:mm") ?? "–")</div>
+                <div>@flight.Status</div>
+            </div>
+        }
+    </div>
+</section>
