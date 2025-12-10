@@ -1,0 +1,161 @@
+:root {
+  --accent: #003f7d;
+  --light: #f4f6fb;
+  --border: #d9deea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--light);
+  color: #1f2933;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+.site-header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.site-header__nav a:last-child {
+  margin-right: 0;
+}
+
+.page {
+  margin-top: 2rem;
+}
+
+.page__header {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  margin: 0 0 0.35rem;
+  color: #52616f;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.lede {
+  margin: 0.35rem 0 0;
+  max-width: 40ch;
+  color: #334155;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 220px;
+}
+
+.filter label {
+  font-weight: 600;
+}
+
+.filter select,
+.filter button {
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+}
+
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: white;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.table__row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+
+.table__row:last-child {
+  border-bottom: none;
+}
+
+.table__row--head {
+  background: #f0f2f8;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.table__row--featured {
+  background: #e6f2ff;
+  border-left: 4px solid var(--accent);
+}
+
+.airline {
+  font-weight: 700;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: block;
+  padding: 1rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: #1f2933;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #52616f;
+  font-size: 0.95rem;
+}
